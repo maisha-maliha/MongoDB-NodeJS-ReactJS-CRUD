@@ -16,6 +16,8 @@ export default function Update(props){
             }
         })
         .catch(err=> console.log(err));
+
+        props.updateTask(head, details);
         props.update();
     }
 
