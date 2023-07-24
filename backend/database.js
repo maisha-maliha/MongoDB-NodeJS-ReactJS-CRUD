@@ -20,7 +20,7 @@ async function getData(){
     }
 }
 async function sendData(head, body){
-    console.log(head, body);
+    // console.log(head, body);
     try {
         client.connect();
         const data = await client.db('todo').collection('item');
@@ -30,4 +30,25 @@ async function sendData(head, body){
         client.close();
     }
 }
-module.exports = {getData, sendData};
+async function updateData(id, head, body){
+    // console.log(id, head, body);
+    try {
+        client.connect();
+        const data = await client.db('todo').collection('item');
+        await data.updateOne({"id": id}, {$set:{"title":head, "content":body}});
+    } finally {
+        client.close();
+    }
+}
+async function deleteData(id){
+    // console.log(id);
+    try {
+        client.connect();
+        const data = await client.db('todo').collection('item');
+        await data.deleteOne({"id": id});
+    } finally {
+        client.close();
+    }
+}
+
+module.exports = {getData, sendData, updateData, deleteData};
