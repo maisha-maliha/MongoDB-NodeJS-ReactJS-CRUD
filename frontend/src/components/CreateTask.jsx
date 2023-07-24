@@ -13,8 +13,6 @@ export default function CreateTask(){
                 body 
             }
         }).catch(err=> console.log(err));
-
-        console.log('it works');
         setHead("");
         setBody("");
     }
@@ -26,11 +24,7 @@ export default function CreateTask(){
         </header>
         <div className="makelist">
             <h2>WHAT TO DO? <img src="./media/smiling.png" alt="" /></h2>
-            <form 
-                method="post" 
-                action="/create" 
-                acceptCharset="utf-8" 
-                encType="text/plain">
+            <form>
                 <input 
                     type="text" 
                     value={head} 

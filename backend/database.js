@@ -3,11 +3,10 @@ const { MongoClient } = require('mongodb');
 const uri = 'mongodb://0.0.0.0:27017';
 
 const client = new MongoClient(uri);
-
+let id = 1;
 async function getData(){
     try {
         client.connect();
-        // console.log('database connected');
         const data = await client.db('todo').collection('item').find().toArray();
         return JSON.stringify(data);
     }
@@ -15,23 +14,19 @@ async function getData(){
         if(error) console.log ('data base error: ', error);
     } 
     finally {
-        // console.log('database disconnected');
         client.close();
     }
 }
 async function sendData(head, body){
-    // console.log(head, body);
     try {
         client.connect();
         const data = await client.db('todo').collection('item');
-        const listLenght = (await data.find().toArray()).length;
-        await data.insertOne({"title": head, "content": body, "id": listLenght +1});
+        await data.insertOne({"title": head, "content": body, "id": id++});
     } finally {
         client.close();
     }
 }
 async function updateData(id, head, body){
-    // console.log(id, head, body);
     try {
         client.connect();
         const data = await client.db('todo').collection('item');
@@ -41,7 +36,6 @@ async function updateData(id, head, body){
     }
 }
 async function deleteData(id){
-    // console.log(id);
     try {
         client.connect();
         const data = await client.db('todo').collection('item');

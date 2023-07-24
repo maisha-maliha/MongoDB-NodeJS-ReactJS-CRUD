@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import React from 'react';
 import './assets/style.css';
 import CreateTask from './components/CreateTask';
 import Tasks from './components/Tasks';
 
 function App() {
-  
+
   return (
     <div>
       <h1>ToDo App by Maisha Maliha</h1>

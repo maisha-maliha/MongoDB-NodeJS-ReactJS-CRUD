@@ -16,7 +16,6 @@ http.createServer(async (req, res)=>{
     else if(req.url == '/create'){
         req.on('data', (chunk)=> {
             const data = JSON.parse(chunk.toString());
-            console.log(data, "hello w");
             db.sendData(data.head, data.body);
         });
         res.end();
