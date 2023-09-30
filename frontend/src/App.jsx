@@ -10,9 +10,9 @@ function App() {
   const [body, setBody] = React.useState("");
   const [list, setList] = React.useState([]); 
 
+  // send data
   function postData(e){
       e.preventDefault();
-      console.log('sent');
       axios('http://localhost:4000/create',{
         method: 'POST',
         data:{
@@ -26,8 +26,8 @@ function App() {
   }
 
 
+  // get data
   React.useEffect(()=>{
-    console.log('called')
     axios.get("http://localhost:4000/api/todo")
         .then((item)=> setList(item.data));
   }, [head]);
@@ -36,6 +36,8 @@ function App() {
         <Task key={item.id} id={item.id} title= {item.title} details = {item.content}/>
     )
   });
+
+
   // ========================= JSX
   return (
     <div>
