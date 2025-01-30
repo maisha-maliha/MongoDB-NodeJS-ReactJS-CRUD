@@ -1,13 +1,13 @@
 # 90s game theme ToDo App
 This is a very simple todo app made using reactjs in the frontend and nodejs with mongoDB database in the backend.
 
-![TODO APP]([https://github.com/maisha-maliha/MongoDB-NodeJS-ReactJS-CRUD/pic1.png](https://github.com/maisha-maliha/MongoDB-NodeJS-ReactJS-CRUD/blob/master/pic1.png))
+![TODO APP](https://raw.githubusercontent.com/maisha-maliha/MongoDB-NodeJS-ReactJS-CRUD/refs/heads/master/pic1.png)
 
 
 To run the project you need to first clone the project:
 `git clone https://github.com/maisha-maliha/MongoDB-NodeJS-ReactJS-CRUD`
 
-![TODO APP Tasks]([https://github.com/maisha-maliha/MongoDB-NodeJS-ReactJS-CRUD/pic2.png](https://github.com/maisha-maliha/MongoDB-NodeJS-ReactJS-CRUD/blob/master/pic2.png))
+![TODO APP Tasks](https://raw.githubusercontent.com/maisha-maliha/MongoDB-NodeJS-ReactJS-CRUD/refs/heads/master/pic2.png)
 
 Now you need to open two terminal in the directory you clonned the repository.
 ## For Frontend
